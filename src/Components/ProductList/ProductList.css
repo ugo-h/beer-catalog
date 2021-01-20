@@ -1,0 +1,13 @@
+.Products{
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+}
+.Product{
+    margin: 2rem;
+    width: 280px;
+    height: 280px;
+}

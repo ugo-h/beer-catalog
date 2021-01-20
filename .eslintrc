@@ -1,0 +1,23 @@
+{
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },  
+    "extends": ["airbnb", "airbnb/hooks"],
+    "rules": {
+        "indent": ["error", 4],
+        "react/jsx-indent": ["error", 4],
+        "react/prop-types": [0],
+        "comma-dangle": ["error", "never"],
+        "linebreak-style": ["error", "windows"],
+        "no-underscore-dangle": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/prefer-default-export": [0],
+        "no-debugger": "warn"
+    }
+}
