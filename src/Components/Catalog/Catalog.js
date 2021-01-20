@@ -6,7 +6,8 @@ import BeerItem from '../BeerItem/BeerItem';
 import { fetchProducts } from '../../actions/productActions';
 
 function Catalog(props) {
-    useEffect(() => props.fetchProducts(), [props]);
+    const fetchProds = props.fetchProducts;
+    useEffect(() => fetchProds(), [fetchProds]);
     return (
         <ProductList products={props.products} template={BeerItem} />
     );
@@ -15,7 +16,8 @@ function Catalog(props) {
 // eslint-disable-next-line arrow-body-style
 const mapStateToProps = ({ products }) => {
     return {
-        products: products.items
+        products: products.items,
+        item: products.item
     };
 };
 

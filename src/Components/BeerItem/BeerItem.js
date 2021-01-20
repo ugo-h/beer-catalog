@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React from 'react';
+import { connect } from 'react-redux';
 import './BeerItem.css';
+import { addToCart } from '../../actions/productActions';
 
-function BeerItem(item) {
-    const [isChecked, setCheck] = useState(false);
-    const addToCart = () => setCheck(!isChecked);
+function BeerItem(props) {
+    const { item } = props;
+
+    const addItemtoCart = () => {
+        const newItem = { ...item, isInCart: !item.isInCart };
+        props.addToCart(newItem);
+    };
     return (
         <div className="Item card">
-            <img className="Item__img card__img" src={item.image_url} alt={item.name} />
+            <img className="Item__img card__img" src={item.imgUrl} alt={item.name} />
             <h3 className="Item__title card__text">{item.name}</h3>
-            <button type="button" className="Item__add-to-cart" onClick={addToCart}>
+            <button type="button" className="Item__add-to-cart">
                 <span className="card__text">Add to card</span>
-                <input className="Item__checkbox" type="checkbox" checked={isChecked} onChange={addToCart} />
+                <input className="Item__checkbox" type="checkbox" checked={item.isInCart} onChange={addItemtoCart} />
             </button>
         </div>
     );
 }
 
-export default BeerItem;
+export default connect(null, { addToCart })(BeerItem);
