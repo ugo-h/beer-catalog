@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS, ADD_TO_CART, SORT_BY_NAME } from './types';
+import { FETCH_PRODUCTS, ADD_TO_CART, SORT } from './types';
 import initBeerAPI from '../API/BeerAPI';
 import { formatProducts } from '../lib/lib';
 
@@ -14,6 +14,7 @@ export const addToCart = (data) => (dispatch) => {
     dispatch({ type: ADD_TO_CART, data });
 };
 
-export const sortByName = () => (dispatch) => {
-    dispatch({ type: SORT_BY_NAME });
+export const sortProducts = (data) => (dispatch) => {
+    const propType = data.sortBy === 'name' ? 'string' : 'number';
+    dispatch({ type: SORT, data: { ...data, propType } });
 };

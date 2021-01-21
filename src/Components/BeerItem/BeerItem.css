@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 'title title' 
-                        'img text'
+                        'img content'
                         'img action'
                         ;
     align-items: center;
@@ -30,9 +30,9 @@
     margin: 0;
     grid-area: title
   }
-  .Item__text{
+  .Item__content{
     text-align: left;
-    grid-area: text
+    grid-area: content
   }
   .Item__img{
     margin-right: 3rem;

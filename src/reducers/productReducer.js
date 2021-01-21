@@ -1,5 +1,5 @@
-import { ADD_TO_CART, FETCH_PRODUCTS, SORT_BY_NAME } from '../actions/types';
-import { sortByNameOption, sortImmutable } from '../lib/lib';
+import { ADD_TO_CART, FETCH_PRODUCTS, SORT } from '../actions/types';
+import { setSortBy, sortImmutable } from '../lib/lib';
 
 export const initialState = {
     items: [],
@@ -18,7 +18,13 @@ export function productReducer(state = initialState, action) {
         )),
         item: action.data
     };
-    case SORT_BY_NAME: return { ...state, items: sortImmutable(state.items, sortByNameOption) };
+    case SORT: {
+        const { propType, sortBy, isAcsending } = action.data;
+        return {
+            ...state,
+            items: sortImmutable(state.items, setSortBy(sortBy, propType)(isAcsending))
+        };
+    }
     default: return state;
     }
 }
