@@ -7,11 +7,17 @@ import { setSearchQuery, setSearchTimer } from '../../actions/searchActions';
 const Search = (props) => {
     const onSubmit = (event) => {
         event.preventDefault();
-        props.searchProducts(props.query);
     };
 
     const onChange = ({ target }) => {
         props.setSearchQuery(target.value);
+        if (props.timer) {
+            clearTimeout(props.timer);
+        }
+        const timer = setTimeout(() => {
+            props.searchProducts(target.value);
+        }, 500);
+        props.setSearchTimer(timer);
     };
 
     return (
