@@ -2,9 +2,13 @@ import React from 'react';
 import CartItem from '../CartItem/CartItem';
 
 const CartItems = ({ items }) => (
-    <ul>
-        {items.map((item) => <CartItem item={item} />)}
-    </ul>
+    items.length > 0
+        ? (
+            <ul className="Cart__list">
+                {items.map((item) => <CartItem item={item} />)}
+            </ul>
+        )
+        : <h3>Your cart is empty...</h3>
 );
 
 export default CartItems;
