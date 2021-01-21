@@ -18,3 +18,5 @@ export const searchBy = (prop) => (array, query) => (
         ));
     })
 );
+
+export const filterBy = (prop) => (array, query) => array.filter((item) => item[prop] === query);

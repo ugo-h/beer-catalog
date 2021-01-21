@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import './App.css';
 import Catalog from './Components/Catalog/Catalog';
 import Header from './Components/Header/Header';
+import Cart from './Components/Cart/Cart';
 import store from './store/store';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
             <Provider store={store}>
                 <Header />
                 <Catalog />
+                <Cart />
             </Provider>
         </div>
     );

@@ -8,7 +8,9 @@ import { searchBy } from '../../lib/lib';
 
 function Catalog(props) {
     const fetchProds = props.fetchProducts;
-    useEffect(() => fetchProds(), [fetchProds]);
+    useEffect(() => {
+        if (props.products.length <= 0) fetchProds();
+    }, [fetchProds, props.products.length]);
     return (
         <ProductList products={props.products} template={BeerItem} />
     );

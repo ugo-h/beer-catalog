@@ -4,6 +4,7 @@ import './Header.css';
 import { connect } from 'react-redux';
 import { sortProducts } from '../../actions/productActions';
 import { setCurrentSort } from '../../actions/headerActions';
+import { toggleCart } from '../../actions/pagesActions';
 import Search from '../Search/Search';
 
 const Header = (props) => {
@@ -15,6 +16,8 @@ const Header = (props) => {
     const onSortSelect = ({ target }) => {
         props.setCurrentSort({ sortBy: target.value, isAcsending: true });
     };
+
+    const onCartClick = () => { props.toggleCart(true); };
 
     return (
         <header className="Header">
@@ -30,6 +33,7 @@ const Header = (props) => {
                 </select>
             </label>
             <Search />
+            <button type="button" onClick={onCartClick}>Cart</button>
         </header>
     );
 };
@@ -39,4 +43,4 @@ const mapStateToProps = ({ sortSettings }) => ({
     sortBy: sortSettings.sortBy
 });
 
-export default connect(mapStateToProps, { sortProducts, setCurrentSort })(Header);
+export default connect(mapStateToProps, { sortProducts, setCurrentSort, toggleCart })(Header);
