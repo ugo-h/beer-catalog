@@ -4,6 +4,7 @@ import './Header.css';
 import { connect } from 'react-redux';
 import { sortProducts } from '../../actions/productActions';
 import { setCurrentSort } from '../../actions/headerActions';
+import Search from '../Search/Search';
 
 const Header = (props) => {
     const onSortBtnClick = () => {
@@ -28,6 +29,7 @@ const Header = (props) => {
                     <option value="ibu">IBU</option>
                 </select>
             </label>
+            <Search />
         </header>
     );
 };

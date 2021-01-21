@@ -1,9 +1,10 @@
-import { ADD_TO_CART, FETCH_PRODUCTS, SORT } from '../actions/types';
+import { ADD_TO_CART, FETCH_PRODUCTS, SEARCH_PRODUCTS, SORT } from '../actions/types';
 import { setSortBy, sortImmutable } from '../lib/lib';
 
 export const initialState = {
     items: [],
-    item: {}
+    item: {},
+    filter: ''
 };
 
 export function productReducer(state = initialState, action) {
@@ -25,6 +26,7 @@ export function productReducer(state = initialState, action) {
             items: sortImmutable(state.items, setSortBy(sortBy, propType)(isAcsending))
         };
     }
+    case SEARCH_PRODUCTS: return { ...state, filter: action.data.query };
     default: return state;
     }
 }

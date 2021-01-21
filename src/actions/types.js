@@ -2,3 +2,6 @@ export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const SORT = 'SORT';
 export const SET_CURRENT_SORT = 'SET_CURRENT_SORT';
+export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS';
+export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';
+export const SET_SEARCH_TIMER = 'SET_SEARCH_TIMER';
