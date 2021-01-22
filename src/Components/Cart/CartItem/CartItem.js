@@ -14,7 +14,9 @@ const CartItem = (props) => {
                 <img className="CartItem__img" src={props.item.imgUrl} alt={props.item.name} />
                 <h3 className="CartItem__title">{props.item.name}</h3>
             </span>
-            <button className="CartItem__remove" type="button" onClick={remove}>remove</button>
+            <button className="CartItem__remove" type="button" onClick={remove}>
+                <img src="https://www.svgrepo.com/show/22471/remove.svg" alt="remove" />
+            </button>
         </li>
     );
 };

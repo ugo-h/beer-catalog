@@ -2,6 +2,7 @@
     margin: 1rem 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .CartItem__img{
@@ -11,3 +12,15 @@
 .CartItem__content{
     display: flex;
 }
+.CartItem__remove{
+    border:none;
+    background: none;
+    cursor: pointer;
+}
+.CartItem__remove img{
+    width: 1.5rem;
+}
+
+/* .CartItem:hover .CartItem__remove{
+    display: block;
+} */

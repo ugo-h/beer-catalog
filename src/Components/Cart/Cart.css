@@ -7,10 +7,18 @@
     max-width: 700px;
     min-height: 300px;
     max-height: 80vh;
+    padding: 1.5rem 3rem;
 }
-
+.Cart__title{
+    margin-bottom: 2rem;
+}
 .Cart__list{
     padding: 1rem;
-    max-height: 400px;
+    max-height: 250px;
     overflow: auto;
+}
+.Cart__controls{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
 }

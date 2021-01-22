@@ -11,3 +11,28 @@
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
 }
+
+.btn--alarm, .btn--success, .btn--ok{
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  color: white;
+}
+.btn--alarm{
+  background: yellow;
+}
+.btn--success{
+  background: #47A025;
+}
+
+.btn--success:hover{
+  background: #4AA320F2;
+}
+
+.btn--ok{
+  background: #8CA3C6;
+}
+.btn--ok:hover{
+  background: #95B8D1;
+}

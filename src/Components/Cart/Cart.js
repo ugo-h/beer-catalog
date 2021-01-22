@@ -11,7 +11,12 @@ const Cart = (props) => {
     return (
         <Popup isOpen={props.isCartOpen} onDecline={closeCart}>
             <div className="Cart card">
+                <h2 className="Cart__title">Cart</h2>
                 <CartItems items={props.items} />
+                <div className="Cart__controls">
+                    <button className="btn--ok" type="button" onClick={closeCart}>Continue shopping</button>
+                    <button className="btn--success" type="button" onClick={closeCart}>Checkout</button>
+                </div>
             </div>
         </Popup>
     );
