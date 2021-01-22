@@ -4,7 +4,7 @@ import './Header.css';
 import { connect } from 'react-redux';
 import { sortProducts } from '../../actions/productActions';
 import { setCurrentSort } from '../../actions/headerActions';
-import { toggleCart } from '../../actions/pagesActions';
+import { toggleCart, toggleSignUp } from '../../actions/pagesActions';
 import Search from '../Search/Search';
 
 const Header = (props) => {
@@ -18,6 +18,8 @@ const Header = (props) => {
     };
 
     const onCartClick = () => { props.toggleCart(true); };
+
+    const onSignUpClick = () => (props.toggleSignUp(true));
 
     return (
         <header className="Header">
@@ -34,6 +36,7 @@ const Header = (props) => {
             </label>
             <Search />
             <button type="button" onClick={onCartClick}>Cart</button>
+            <button type="button" onClick={onSignUpClick}>Sign Up</button>
         </header>
     );
 };
@@ -43,4 +46,9 @@ const mapStateToProps = ({ sortSettings }) => ({
     sortBy: sortSettings.sortBy
 });
 
-export default connect(mapStateToProps, { sortProducts, setCurrentSort, toggleCart })(Header);
+export default connect(mapStateToProps, {
+    sortProducts,
+    setCurrentSort,
+    toggleCart,
+    toggleSignUp
+})(Header);

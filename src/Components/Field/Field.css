@@ -1,0 +1,12 @@
+.Field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5rem;
+}
+.Field__input{
+
+}
+.Field__error{
+    color: red;
+}

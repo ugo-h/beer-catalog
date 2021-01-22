@@ -9,7 +9,7 @@ const CartItem = (props) => {
         props.addToCart(newItem);
     };
     return (
-        <li className="CartItem">
+        <li className="CartItem" key={props.item.id}>
             <span className="CartItem__content">
                 <img className="CartItem__img" src={props.item.imgUrl} alt={props.item.name} />
                 <h3 className="CartItem__title">{props.item.name}</h3>

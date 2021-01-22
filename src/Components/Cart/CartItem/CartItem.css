@@ -20,7 +20,10 @@
 .CartItem__remove img{
     width: 1.5rem;
 }
-
+.Cart__empty_cart_msg{
+    text-align: center;
+    color: #666;
+}
 /* .CartItem:hover .CartItem__remove{
     display: block;
 } */

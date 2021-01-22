@@ -8,6 +8,9 @@
     min-height: 300px;
     max-height: 80vh;
     padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .Cart__title{
     margin-bottom: 2rem;

@@ -4,6 +4,7 @@ import './App.css';
 import Catalog from './Components/Catalog/Catalog';
 import Header from './Components/Header/Header';
 import Cart from './Components/Cart/Cart';
+import SignUp from './Components/SignUp/SignUp';
 import store from './store/store';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
                 <Header />
                 <Catalog />
                 <Cart />
+                <SignUp />
             </Provider>
         </div>
     );

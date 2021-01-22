@@ -8,7 +8,7 @@ const CartItems = ({ items }) => (
                 {items.map((item) => <CartItem item={item} />)}
             </ul>
         )
-        : <h3>Your cart is empty...</h3>
+        : <h3 className="Cart__empty_cart_msg">Your cart is empty...</h3>
 );
 
 export default CartItems;

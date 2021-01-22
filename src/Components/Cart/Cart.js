@@ -15,7 +15,7 @@ const Cart = (props) => {
                 <CartItems items={props.items} />
                 <div className="Cart__controls">
                     <button className="btn--ok" type="button" onClick={closeCart}>Continue shopping</button>
-                    <button className="btn--success" type="button" onClick={closeCart}>Checkout</button>
+                    {props.items.length > 0 ? <button className="btn--success" type="button" onClick={closeCart}>Checkout</button> : ''}
                 </div>
             </div>
         </Popup>
