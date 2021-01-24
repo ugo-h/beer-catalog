@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import SignUpForm from './SignUpForm';
 import Popup from '../Popup/Popup';
-import { toggleSignUp } from '../../actions/pagesActions';
+import { toggleSignUp } from '../../actions/popupsActions';
 import { setSignUpFormFieldValue, updateFields, clearFormInput } from '../../actions/signUpFormActions';
 import { validateForm } from './validate';
 import './SignUp.css';

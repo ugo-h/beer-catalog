@@ -4,7 +4,7 @@ import './Cart.css';
 import { filterBy } from '../../lib/lib';
 import CartItems from './CartItems/CartItems';
 import Popup from '../Popup/Popup';
-import { toggleCart } from '../../actions/pagesActions';
+import { toggleCart } from '../../actions/popupsActions';
 
 const Cart = (props) => {
     const closeCart = () => props.toggleCart(false);

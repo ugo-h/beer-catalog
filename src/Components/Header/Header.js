@@ -4,7 +4,7 @@ import './Header.css';
 import { connect } from 'react-redux';
 import { sortProducts } from '../../actions/productActions';
 import { setCurrentSort } from '../../actions/headerActions';
-import { toggleCart, toggleSignUp } from '../../actions/pagesActions';
+import { toggleCart, toggleSignUp } from '../../actions/popupsActions';
 import Search from '../Search/Search';
 
 const Header = (props) => {

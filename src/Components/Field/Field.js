@@ -1,7 +1,5 @@
 import React from 'react';
 import './Field.css';
-import { connect } from 'react-redux';
-import { setSignUpFormFieldValue } from '../../actions/signUpFormActions';
 
 const Field = ({ label, name, fields, type, setSignUpFormFieldValue: setFieldValue }) => {
     const onChange = ({ target }) => setFieldValue(name, target.value);
@@ -15,8 +13,4 @@ const Field = ({ label, name, fields, type, setSignUpFormFieldValue: setFieldVal
     );
 };
 
-const mapStateToProps = ({ signUpForm }) => ({
-    fields: { ...signUpForm.fields }
-});
-
-export default connect(mapStateToProps, { setSignUpFormFieldValue })(Field);
+export default Field;

@@ -1,4 +1,4 @@
-import { isEmail, required, isValidPassword } from '../../lib/validation';
+import { isEmail, required, isValidPassword, isValidPasswordConfirmation } from '../../lib/validation';
 
 export const validateForm = (fields) => {
     const updatedFields = {};
@@ -15,6 +15,11 @@ export const validateForm = (fields) => {
         case 'password':
             if (!isValidPassword(value) && !required(value)) {
                 error = 'Password should be at least 6 characters long!';
+            }
+            break;
+        case 'confirmPassword':
+            if (!isValidPasswordConfirmation(value, fields.password.value)) {
+                error = 'Password confirmation do not match the password!';
             }
             break;
         default:
