@@ -3,17 +3,22 @@ import { connect } from 'react-redux';
 import SignUpForm from './SignUpForm';
 import Popup from '../Popup/Popup';
 import { toggleSignUp } from '../../actions/pagesActions';
-import { setSignUpFormFieldValue, validateFormInput, clearFormInput } from '../../actions/signUpFormActions';
+import { setSignUpFormFieldValue, updateFields, clearFormInput } from '../../actions/signUpFormActions';
+import { validateForm } from './validate';
 import './SignUp.css';
 
 const SignUp = (props) => {
-    const close = () => props.toggleSignUp(false);
+    const close = () => {
+        props.clearFormInput();
+        props.toggleSignUp(false);
+    };
     const onSubmit = (ev) => {
         ev.preventDefault();
-        props.validateFormInput();
-        if (!props.hasErrors) {
-            props.clearFormInput();
+        const { hasErrors, fields } = validateForm(props.fields);
+        if (!hasErrors) {
             close();
+        } else {
+            props.updateFields(fields);
         }
     };
 
@@ -29,12 +34,12 @@ const SignUp = (props) => {
 
 const mapStateToProps = ({ pages, signUpForm }) => ({
     isOpen: pages.isSignUpOpen,
-    hasErrors: signUpForm.hasErrors
+    fields: signUpForm.fields
 });
 
 export default connect(mapStateToProps, {
     toggleSignUp,
     setSignUpFormFieldValue,
-    validateFormInput,
+    updateFields,
     clearFormInput
 })(SignUp);

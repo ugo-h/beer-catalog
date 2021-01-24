@@ -1,13 +1,6 @@
-export const required = (value) => value.trim().length > 0;
+import { isEmail, required, isValidPassword } from '../../lib/validation';
 
-export const isEmail = (value) => {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(value).toLowerCase());
-};
-
-export const isValidPassword = (value) => value.length >= 6;
-
-export const validateForm = ({ fields }) => {
+export const validateForm = (fields) => {
     const updatedFields = {};
     let hasErrors = false;
     Object.keys(fields).forEach((fieldName) => {
@@ -32,13 +25,5 @@ export const validateForm = ({ fields }) => {
         if (error) hasErrors = true;
         updatedFields[fieldName] = { error, value };
     });
-    return { fields: updatedFields, hasErrors };
-};
-
-export const clearForm = ({ fields, hasErrors }) => {
-    const updatedFields = {};
-    Object.keys(fields).forEach((fieldName) => {
-        updatedFields[fieldName] = { value: '', error: '' };
-    });
-    return { fields: updatedFields, hasErrors };
+    return { fields: { ...fields, ...updatedFields }, hasErrors };
 };

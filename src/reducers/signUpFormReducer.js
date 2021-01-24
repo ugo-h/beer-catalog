@@ -1,5 +1,5 @@
-import { SET_SIGNUP_FORM_FIELD_VALUE, VALIDATE_FORM_INPUT, EMPTY_FORM_INPUT } from '../actions/types';
-import { validateForm, clearForm } from '../lib/validation';
+import { SET_SIGNUP_FORM_FIELD_VALUE, UPDATE_FIELDS, EMPTY_FORM_INPUT } from '../actions/types';
+import { clearForm } from '../lib/validation';
 
 const initialState = {
     fields: {
@@ -17,7 +17,7 @@ export const signUpFormReducer = (state = initialState, action) => {
     case SET_SIGNUP_FORM_FIELD_VALUE: return {
         ...state, fields: { ...state.fields, ...action.data }
     };
-    case VALIDATE_FORM_INPUT: return validateForm(state);
+    case UPDATE_FIELDS: return { ...state, fields: { ...action.data } };
     case EMPTY_FORM_INPUT: return clearForm(state);
     default: return state;
     }

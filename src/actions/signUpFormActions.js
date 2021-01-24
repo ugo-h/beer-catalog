@@ -1,4 +1,4 @@
-import { EMPTY_FORM_INPUT, SET_SIGNUP_FORM_FIELD_VALUE, VALIDATE_FORM_INPUT } from './types';
+import { EMPTY_FORM_INPUT, SET_SIGNUP_FORM_FIELD_VALUE, UPDATE_FIELDS } from './types';
 
 export const setSignUpFormFieldValue = (key, value) => (dispatch) => {
     const data = {
@@ -10,8 +10,8 @@ export const setSignUpFormFieldValue = (key, value) => (dispatch) => {
     dispatch({ type: SET_SIGNUP_FORM_FIELD_VALUE, data });
 };
 
-export const validateFormInput = () => (dispatch) => {
-    dispatch({ type: VALIDATE_FORM_INPUT });
+export const updateFields = (fields) => (dispatch) => {
+    dispatch({ type: UPDATE_FIELDS, data: fields });
 };
 
 export const clearFormInput = () => (dispatch) => {

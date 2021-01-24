@@ -10,7 +10,7 @@ const Field = ({ label, name, fields, type, setSignUpFormFieldValue: setFieldVal
         <label className="Field" htmlFor={`${name}-input`}>
             {label}
             <input value={value} type={type} className="Field__input" id={`${name}-input`} onChange={onChange} />
-            {error ? <span className="Field__error-container">{error}</span> : ''}
+            <span className="Field__error-container">{error}</span>
         </label>
     );
 };
