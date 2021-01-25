@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import './Paginator.css';
-import { scrollToTop } from '../../lib/lib';
+import { scrollToTop } from '../../../lib/lib';
 
 const Paginator = (props) => {
     const countPages = () => {

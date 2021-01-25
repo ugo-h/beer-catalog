@@ -1,5 +1,5 @@
 import React from 'react';
-import Field from '../Field/SignUpField';
+import Field from './SignUpField';
 
 const SignUpForm = ({ onSubmit }) => (
     <form onSubmit={onSubmit} className="SignUpForm" id="sign-up-form">

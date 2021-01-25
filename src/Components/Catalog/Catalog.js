@@ -2,8 +2,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import './Catalog.css';
-import ProductList from '../ProductList/ProductList';
-import BeerItem from '../BeerItem/BeerItem';
+import ProductList from './ProductList/ProductList';
 import { fetchProducts } from '../../actions/productActions';
 import { searchBy } from '../../lib/lib';
 import Paginator from './CatalogPaginator';
@@ -19,7 +18,7 @@ function Catalog(props) {
                 <h1>Brewdog&apos;s beer catalog</h1>
                 <h4>Page: {props.currentPage}/{props.numberOfPages}</h4>
             </div>
-            <ProductList products={props.products} template={BeerItem} />
+            <ProductList products={props.products} />
             <Paginator pages={props.numberOfPages} />
         </div>
     );

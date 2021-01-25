@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './BeerItem.css';
-import { addToCart } from '../../actions/productActions';
+import { addToCart } from '../../../actions/productActions';
 
 function BeerItem(props) {
     const { item } = props;
