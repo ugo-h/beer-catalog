@@ -1,0 +1,19 @@
+.Catalog{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.Catalog__header{
+    color: #666;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media(max-width: 700px) {
+    .Catalog{
+        margin-bottom: 16vh;
+    }
+}

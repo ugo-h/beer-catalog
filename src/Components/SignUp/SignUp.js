@@ -6,6 +6,7 @@ import { toggleSignUp } from '../../actions/popupsActions';
 import { setSignUpFormFieldValue, updateFields, clearFormInput } from '../../actions/signUpFormActions';
 import { validateForm } from './validate';
 import './SignUp.css';
+import BtnClose from '../Util/Btn/BtnClose';
 
 const SignUp = (props) => {
     const close = () => {
@@ -25,6 +26,7 @@ const SignUp = (props) => {
     return (
         <Popup isOpen={props.isOpen} onDecline={close}>
             <div className="SignUp card">
+                <BtnClose action={close} />
                 <h2>Sign Up</h2>
                 <SignUpForm onSubmit={onSubmit} />
             </div>

@@ -15,7 +15,7 @@
 .btn--alarm, .btn--success, .btn--ok{
   border: 2px solid transparent;
   border-radius: 20px;
-  padding: 0.7rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   color: white;
 }
@@ -23,16 +23,23 @@
   background: yellow;
 }
 .btn--success{
-  background: #47A025;
+  background: #8A9820;
 }
 
 .btn--success:hover{
-  background: #4AA320F2;
+  background: #8A985a;
 }
 
 .btn--ok{
-  background: #8CA3C6;
+  background: #3C3C30;
 }
 .btn--ok:hover{
-  background: #95B8D1;
+  background: #666;
+}
+
+@media(max-width: 700px) {
+  .btn--alarm, .btn--success, .btn--ok{
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }

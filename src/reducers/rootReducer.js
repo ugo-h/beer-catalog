@@ -7,7 +7,7 @@ import { signUpFormReducer } from './signUpFormReducer';
 
 export default combineReducers({
     products: productReducer,
-    sortSettings: headerReducer,
+    header: headerReducer,
     search: searchReducer,
     pages: pagesReducer,
     signUpForm: signUpFormReducer

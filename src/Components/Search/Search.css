@@ -1,0 +1,10 @@
+.Search__input{
+    margin-left: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.Search__input:focus{
+    outline: none;
+    border: 1px solid black;
+}

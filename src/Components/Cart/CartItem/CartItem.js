@@ -15,7 +15,7 @@ const CartItem = (props) => {
                 <h3 className="CartItem__title">{props.item.name}</h3>
             </span>
             <button className="CartItem__remove" type="button" onClick={remove}>
-                <img src="https://www.svgrepo.com/show/22471/remove.svg" alt="remove" />
+                <img src="https://www.svgrepo.com/show/264838/remove.svg" alt="remove" />
             </button>
         </li>
     );

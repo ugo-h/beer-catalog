@@ -12,6 +12,9 @@
 .CartItem__content{
     display: flex;
 }
+.CartItem__title{
+    font-size: 1rem;
+}
 .CartItem__remove{
     border:none;
     background: none;
@@ -24,6 +27,9 @@
     text-align: center;
     color: #666;
 }
-/* .CartItem:hover .CartItem__remove{
-    display: block;
-} */
+@media(max-width: 700px) {
+    .CartItem__img{
+        margin-right: 1.5rem;
+        height: 4rem;
+    }
+}

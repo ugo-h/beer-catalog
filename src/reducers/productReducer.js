@@ -1,10 +1,12 @@
-import { ADD_TO_CART, FETCH_PRODUCTS, SEARCH_PRODUCTS, SORT } from '../actions/types';
+import { ADD_TO_CART, FETCH_PRODUCTS, SEARCH_PRODUCTS, SET_PAGE, SORT } from '../actions/types';
 import { setSortBy, sortImmutable } from '../lib/lib';
 
 export const initialState = {
     items: [],
     item: {},
-    filter: ''
+    filter: '',
+    currentPage: 1,
+    productsPerPage: 18
 };
 
 export function productReducer(state = initialState, action) {
@@ -27,6 +29,11 @@ export function productReducer(state = initialState, action) {
         };
     }
     case SEARCH_PRODUCTS: return { ...state, filter: action.data.query };
+    case SET_PAGE: {
+        const { page } = action.data;
+        if (page < 1 || page > state.items.length / state.productsPerPage) return state;
+        return { ...state, currentPage: page };
+    }
     default: return state;
     }
 }

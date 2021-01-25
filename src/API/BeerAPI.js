@@ -7,7 +7,7 @@ export default () => {
         getBeerPage(page) {
             return fetchGetJson(url, {
                 page,
-                per_page: 20
+                per_page: 80
             });
         }
     };

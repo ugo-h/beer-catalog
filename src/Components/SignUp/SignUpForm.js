@@ -8,7 +8,7 @@ const SignUpForm = ({ onSubmit }) => (
         <Field label="Email" type="email" name="email" />
         <Field label="Password" type="password" name="password" />
         <Field label="Confirm password" type="password" name="confirmPassword" />
-        <button type="submit" form="sign-up-form">Sign Up</button>
+        <button className="SignUpForm__submit" type="submit" form="sign-up-form">Sign Up</button>
     </form>
 );
 

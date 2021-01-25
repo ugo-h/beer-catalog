@@ -5,16 +5,18 @@ import { filterBy } from '../../lib/lib';
 import CartItems from './CartItems/CartItems';
 import Popup from '../Popup/Popup';
 import { toggleCart } from '../../actions/popupsActions';
+import BtnClose from '../Util/Btn/BtnClose';
 
 const Cart = (props) => {
     const closeCart = () => props.toggleCart(false);
     return (
         <Popup isOpen={props.isCartOpen} onDecline={closeCart}>
             <div className="Cart card">
+                <BtnClose action={closeCart} />
                 <h2 className="Cart__title">Cart</h2>
                 <CartItems items={props.items} />
                 <div className="Cart__controls">
-                    <button className="btn--ok" type="button" onClick={closeCart}>Continue shopping</button>
+                    <button className="btn--ok" type="button" onClick={closeCart}>Return to catalog</button>
                     {props.items.length > 0 ? <button className="btn--success" type="button" onClick={closeCart}>Checkout</button> : ''}
                 </div>
             </div>

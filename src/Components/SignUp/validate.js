@@ -8,18 +8,18 @@ export const validateForm = (fields) => {
         const { value } = fields[fieldName];
         switch (fieldName) {
         case 'email':
-            if (!isEmail(value) && !required(value)) {
-                error = 'Email is not valid! Email should contain @ character.';
+            if (!isEmail(value) || !required(value)) {
+                error = 'Email is not valid! Please enter a valid email.';
             }
             break;
         case 'password':
-            if (!isValidPassword(value) && !required(value)) {
+            if (!isValidPassword(value) || !required(value)) {
                 error = 'Password should be at least 6 characters long!';
             }
             break;
         case 'confirmPassword':
             if (!isValidPasswordConfirmation(value, fields.password.value)) {
-                error = 'Password confirmation do not match the password!';
+                error = 'Password confirmation does not match the password!';
             }
             break;
         default:

@@ -1,0 +1,28 @@
+.Paginator{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.Paginator__pages{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.Paginator__page{
+    padding: 0.25rem;
+}
+.Paginator__btn{
+    cursor: pointer;
+    padding:0.25rem 0.5rem;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.Paginator__btn.active{
+    color: white;
+    background-color:#3C3C30;
+}

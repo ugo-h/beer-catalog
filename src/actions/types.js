@@ -2,9 +2,12 @@
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const SORT = 'SORT';
+export const SET_PAGE = 'SET_PAGE';
 
 // sort settings
 export const SET_CURRENT_SORT = 'SET_CURRENT_SORT';
+
+export const TOGGLE_EXPLORE_MENU = 'TOGGLE_EXPLORE_MENU';
 
 // search actions
 export const SEARCH_PRODUCTS = 'SEARCH_PRODUCTS';

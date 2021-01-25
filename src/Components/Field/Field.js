@@ -2,7 +2,10 @@ import React from 'react';
 import './Field.css';
 
 const Field = ({ label, name, fields, type, setSignUpFormFieldValue: setFieldValue }) => {
-    const onChange = ({ target }) => setFieldValue(name, target.value);
+    const onChange = ({ target }) => {
+        target.scrollIntoViewIfNeeded();
+        setFieldValue(name, target.value);
+    };
     const { value, error } = fields[name];
     return (
         <label className="Field" htmlFor={`${name}-input`}>

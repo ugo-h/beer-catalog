@@ -1,6 +1,6 @@
 .Header{
     height: 14vh;
-    background: #297B34;
+    background: #3C3C30;
     color: white;
     width: 100%;
     display: flex;
@@ -14,10 +14,46 @@
     margin: 0 1rem;
     border-radius: 20px;
     padding: 0.5rem 1rem;
-    color: #297B34;
+    color: #3C3C30;
     background: white;
 }
 .Header__btn:hover{
     color: white;
     background: transparent;
+}
+.Header__select__option{
+    width: 80%;
+}
+.Header__btn:hover .Header__select__option{
+    color: #3C3C30;
+    background: white;
+}
+.Nav__explore{
+    display: none;
+}
+.Header__explore-menu{
+    display: flex;
+}
+@media(max-width: 700px) {
+    .Header{
+        position: fixed;
+        bottom: 0;
+        order: 4;
+    }
+    .Nav__explore{
+        display: block;
+    }
+    .Header__explore-menu{
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 20vh;
+        background: #3C3C30;
+        position: fixed;
+        bottom: 13vh;
+        display: none;
+    }
+    .Header__explore-menu.isOpen{
+        display: flex;
+    }
 }

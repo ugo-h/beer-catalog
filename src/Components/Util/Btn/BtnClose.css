@@ -1,0 +1,14 @@
+.BtnClose{
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.BtnClose__img{
+    width: 1.3rem;
+}
